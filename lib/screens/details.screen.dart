@@ -1,3 +1,4 @@
+import 'package:flt_peliculas/models/models.dart';
 import 'package:flt_peliculas/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +9,12 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     //TODO: Cambiar luego por una instancia de movie
-    final String movie = ModalRoute.of(context)?.settings.arguments.toString() ?? 'No Movie';
+    final Movie movie = ModalRoute.of(context)!.settings.arguments as Movie;
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          const _CustomAppBar(),
+          _CustomAppBar( movie ),
           SliverList(
             delegate: SliverChildListDelegate([
               const _PosterAndTitle(),
@@ -31,7 +32,10 @@ class DetailsScreen extends StatelessWidget {
 }
 
 class _CustomAppBar extends StatelessWidget {
-  const _CustomAppBar({Key? key}) : super(key: key);
+  
+  final Movie movie;
+
+  const _CustomAppBar( this.movie );
 
   @override
   Widget build(BuildContext context) {
@@ -48,15 +52,15 @@ class _CustomAppBar extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           padding: const EdgeInsets.only( bottom: 10),
           color: Colors.black12,
-          child: const Text(
-            'movie.title',
-            style: TextStyle(fontSize: 12),
+          child: Text(
+            movie.title,
+            style: const TextStyle(fontSize: 12),
           ),
         ),
 
-        background: const FadeInImage(
+        background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'), 
-          image: NetworkImage('https://via.placeholder.com/500x300'),
+          image: NetworkImage( movie.fullbackdropPath ),
           fit: BoxFit.cover,
         ),
       ),
