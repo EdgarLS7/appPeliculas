@@ -20,7 +20,7 @@ class MovieSlider extends StatefulWidget {
 
 class _MovieSliderState extends State<MovieSlider> {
 
-  final ScrollController scrollController = new ScrollController();
+  final ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
@@ -35,7 +35,7 @@ class _MovieSliderState extends State<MovieSlider> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
+
     super.dispose();
   }
 
@@ -48,10 +48,11 @@ class _MovieSliderState extends State<MovieSlider> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          if (this.widget.title != null)
+          if (widget.title != null)
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Text( this.widget.title!, style: TextStyle( fontSize: 15, fontWeight: FontWeight.bold),)
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Text( widget.title!, 
+            style: const TextStyle( fontSize: 15, fontWeight: FontWeight.bold),)
           ),
           
           const SizedBox(height: 3,),
@@ -91,7 +92,7 @@ class _MoviePoster extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: FadeInImage(
-                placeholder: AssetImage('assets/no-image.jpg'), 
+                placeholder: const AssetImage('assets/no-image.jpg'), 
                 image: NetworkImage( movie.fullPosterImg),
                 width: 125,
                 height: 160,
@@ -107,7 +108,7 @@ class _MoviePoster extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center, 
-              style: TextStyle(fontSize: 12),
+              style: const TextStyle(fontSize: 12),
             )
         ],
       ),

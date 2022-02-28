@@ -13,14 +13,14 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          _CustomAppBar(),
+          const _CustomAppBar(),
           SliverList(
             delegate: SliverChildListDelegate([
-              _PosterAndTitle(),
-              _Overview(),
-              _Overview(),
-              _Overview(),
-              CastingCards(),
+              const _PosterAndTitle(),
+              const _Overview(),
+              const _Overview(),
+              const _Overview(),
+              const CastingCards(),
 
             ])
           )

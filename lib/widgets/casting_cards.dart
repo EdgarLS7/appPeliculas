@@ -6,13 +6,13 @@ class CastingCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only( bottom: 25),
+      margin: const EdgeInsets.only( bottom: 25),
       width: double.infinity,
       height: 180,
       child: ListView.builder(
         itemCount: 10,
         scrollDirection: Axis.horizontal,
-        itemBuilder: ( _ , int index) => _CastCard(),
+        itemBuilder: ( _ , int index) => const _CastCard(),
       ),
     );
   }
@@ -24,7 +24,7 @@ class _CastCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric( horizontal: 10),
+      margin: const EdgeInsets.symmetric( horizontal: 10),
       width: 125,
       height: 190,
       child: Column(
