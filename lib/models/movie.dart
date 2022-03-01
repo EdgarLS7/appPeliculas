@@ -39,7 +39,6 @@ class Movie {
     }
       
       return 'https://i.stack.imgur.com/GNhxO.png';
-
   }
 
   get fullbackdropPath {
