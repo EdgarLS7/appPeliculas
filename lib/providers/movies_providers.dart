@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class MoviesProviders extends ChangeNotifier {
 
   final String _apiKey   = '2dc633bd44fadfce2757273859ce7010';
-  final String _baseUrl = 'api.themoviedb.org';
+  final String _baseUrl  = 'api.themoviedb.org';
   final String _language = 'es-ES';
 
   List<Movie> onDisplayMovies = [];

@@ -63,7 +63,7 @@ class _MovieSliderState extends State<MovieSlider> {
               controller: scrollController,
               scrollDirection: Axis.horizontal,
               itemCount: widget.movies.length,
-              itemBuilder: ( _ , int index) => _MoviePoster(widget.movies[index])
+              itemBuilder: ( _, int index) => _MoviePoster(widget.movies[index])
             ),
           ),
         ],
@@ -93,7 +93,7 @@ class _MoviePoster extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               child: FadeInImage(
                 placeholder: const AssetImage('assets/no-image.jpg'), 
-                image: NetworkImage( movie.fullPosterImg),
+                image: NetworkImage( movie.fullPosterImg ),
                 width: 125,
                 height: 160,
                 fit: BoxFit.cover,
